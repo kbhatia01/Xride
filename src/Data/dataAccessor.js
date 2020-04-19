@@ -2,10 +2,11 @@
 const SqlClient = require('./resource/SQL').client;
 
 DataAccessor.prototype.insertToBooking = async (data) => {
-    stmt = `insert into Booking (id , user_id , vehicle_model_id) values ?`
-    return SqlClient.query(stmt, data).catch(err => {
-        return err;
-    });
+    const stmt = {
+        text: "insert into Booking (id , user_id , vehicle_model_id) values ($1, $2,$3)",
+        values: data
+    }
+    return SqlClient.query(stmt);
 }
 
 function DataAccessor() { }
