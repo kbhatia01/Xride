@@ -1,5 +1,6 @@
 const { Client } = require('pg');
-const connectionString = 'postgres://postgres:postgres@localhost:5434/karan';
+
+const connectionString = require('../../config/stage').local.SQL;
 const client = new Client({
     connectionString: connectionString
 });

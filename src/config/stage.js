@@ -2,14 +2,7 @@ var config = {};
 
 
 config.local = {
-    SQL: {
-        DATABASE: "",
-        USERNAME: "root",
-        PASSWORD: 123456,
-        HOST: "",
-        PORT: ""
-
-    }
+    SQL: 'postgres://postgres:postgres@localhost:5434/karan'
 };
 
 module.exports = config;
